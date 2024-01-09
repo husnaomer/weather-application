@@ -1,0 +1,113 @@
+body {
+  background-color: white;
+  font-family: "Caveat", cursive;
+}
+.container {
+  max-width: 600px;
+  background-color: #ddeedf;
+  margin: 90px auto;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 30px 50px rgba(67, 61, 83, 0.08);
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+.search-form-input {
+  border: none;
+  padding: 15px 20px;
+  width: 60%;
+  border-radius: 10px;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  background-color: #ececec;
+}
+.search-form-button {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 40px;
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+  margin-left: 5px;
+  background-color: #9fd3c7;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  text-shadow: 25px 32px 24px rgba(28, 29, 29, 0.2);
+  color: #1c1d1d;
+}
+.temp {
+  font-size: 65px;
+  display: flex;
+  justify-content: left;
+  position: relative;
+  bottom: 40px;
+}
+
+.degree {
+  position: relative;
+  font-size: 40px;
+  top: 10px;
+  left: 5px;
+}
+.day {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  bottom: 80px;
+  font-size: 30px;
+}
+.time {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  bottom: 80px;
+  font-size: 30px;
+}
+.description {
+  position: relative;
+  font-size: 30px;
+  bottom: 120px;
+}
+img {
+  display: block;
+  margin: -60px auto;
+  border-radius: 60px;
+  width: 300px;
+  position: relative;
+  bottom: 70px;
+}
+.detail {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+.Humidity {
+  position: relative;
+  left: 7px;
+  top: 5px;
+}
+.wind {
+  position: relative;
+  top: 5px;
+  left: 8px;
+}
+.feels-like {
+  position: relative;
+  left: 10px;
+  top: 5px;
+}
+footer {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+a {
+  text-decoration: solid;
+  color: #66bfbf;
+}
+a:hover {
+  color: #71a0a5;
+}
