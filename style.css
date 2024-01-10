@@ -43,41 +43,34 @@ h1 {
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 40px;
+  bottom: 60px;
 }
 
 .degree {
   position: relative;
   font-size: 40px;
-  top: 10px;
-  left: 5px;
-}
-.day {
-  display: flex;
-  justify-content: right;
-  position: relative;
-  bottom: 80px;
-  font-size: 30px;
+  bottom: 130px;
+  left: 27px;
 }
 .time {
   display: flex;
   justify-content: right;
   position: relative;
-  bottom: 80px;
+  bottom: 150px;
   font-size: 30px;
 }
 .description {
   position: relative;
   font-size: 30px;
-  bottom: 120px;
+  bottom: 160px;
 }
 img {
   display: block;
   margin: -60px auto;
-  border-radius: 60px;
+  border-radius: 90px;
   width: 300px;
   position: relative;
-  bottom: 70px;
+  bottom: 90px;
 }
 .detail {
   display: flex;

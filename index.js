@@ -1,7 +1,9 @@
 function tempreture(response) {
   console.log(response);
   let temp = document.querySelector("#temp");
+
   temp.innerHTML = Math.round(response.data.temperature.current);
+
   let city = document.querySelector("#city");
   city.innerHTML = response.data.city;
   let description = document.querySelector("#description");
@@ -13,8 +15,11 @@ function tempreture(response) {
   let wind = Math.round(response.data.wind.speed);
   windElement.innerHTML = `${wind} km/h`;
   let feelsLike = document.querySelector("#feels-like");
-  feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
-  let timeElement = document.querySelector("#date");
+
+  let FeelLike = Math.round(response.data.temperature.feels_like);
+  feelsLike.innerHTML = `${FeelLike} °C`;
+  let timeElement = document.querySelector("#time");
+
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
 }
@@ -49,7 +54,7 @@ function formatDate(date) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  return `${day}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 let searchElement = document.querySelector("#search-form");
