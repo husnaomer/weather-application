@@ -38,33 +38,35 @@ h1 {
   text-shadow: 25px 32px 24px rgba(28, 29, 29, 0.2);
   color: #1c1d1d;
 }
+
 .temp {
-  font-size: 65px;
+  font-size: 60px;
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 60px;
+  bottom: 30px;
 }
 
 .degree {
   position: relative;
-  font-size: 40px;
-  bottom: 130px;
-  left: 27px;
+  font-size: 35px;
+  bottom: 100px;
+  padding-left: 25px;
+  margin-left: 20px;
 }
 .time {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   position: relative;
-  bottom: 150px;
+  bottom: 90px;
   font-size: 30px;
 }
 .description {
   position: relative;
   font-size: 30px;
-  bottom: 160px;
+  bottom: 90px;
 }
-img {
+.img {
   display: block;
   margin: -60px auto;
   border-radius: 90px;

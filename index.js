@@ -22,6 +22,9 @@ function tempreture(response) {
 
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
+
+  let img = document.querySelector("#img");
+  img.innerHTML = `<img src="${response.data.condition.icon_url}" class="img"/>`;
 }
 
 function searchCity(city) {
