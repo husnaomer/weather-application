@@ -40,13 +40,13 @@ function handleSearchSubmit(event) {
 }
 function formatDate(date) {
   let days = [
-    "Satarday",
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
+    "Satarday",
   ];
   let day = days[date.getDay()];
   let hours = date.getHours();
