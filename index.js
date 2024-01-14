@@ -25,11 +25,12 @@ function tempreture(response) {
 
   let img = document.querySelector("#img");
   img.innerHTML = `<img src="${response.data.condition.icon_url}" class="img"/>`;
+  getForecast(response.data.city);
 }
 
 function searchCity(city) {
   let apiKey = "8fdc962ca4f99b40401bo349tfa59399";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(tempreture);
 }
 function handleSearchSubmit(event) {
@@ -60,6 +61,38 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(city) {
+  let apiKey = "8fdc962ca4f99b40401bo349tfa59399";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
+}
+
+function dispalyForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "wed", "Thu", "Fri"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+         <div class="weather-forecast-day">
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">☀️</div>
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-tempreature-max"
+                ><strong>12°</strong></span
+              >
+              <span class="weather-forecast-tempreature-min"> 9°</span>
+            </div>
+          </div>
+         `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", handleSearchSubmit);
 searchCity("kabul");
+dispalyForecast();

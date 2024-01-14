@@ -40,41 +40,40 @@ h1 {
 }
 
 .temp {
-  font-size: 60px;
+  font-size: 55px;
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 30px;
+  bottom: 20px;
 }
 
 .degree {
   position: relative;
   font-size: 35px;
-  bottom: 100px;
-  padding-left: 25px;
-  margin-left: 20px;
+  bottom: 75px;
+  left: 67px;
 }
 .time {
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 90px;
+  bottom: 75px;
   font-size: 30px;
 }
 .description {
   position: relative;
   font-size: 30px;
-  bottom: 90px;
+  bottom: 75px;
 }
 .img {
   display: block;
-
+  margin: 10px auto;
   border-radius: 90px;
   width: 250px;
   position: relative;
   bottom: 270px;
   padding-top: 0;
-  left: 300px;
+  left: 180px;
 }
 .detail {
   display: flex;
@@ -114,6 +113,7 @@ hr {
   padding: 10px;
   position: relative;
   bottom: 100px;
+  font-size: 30px;
   box-shadow: 0 30px 50px rgba(67, 61, 83, 0.08);
 }
 .weather-forecast-icon {
