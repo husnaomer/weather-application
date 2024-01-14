@@ -44,26 +44,20 @@ h1 {
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 20px;
+  bottom: 60px;
 }
 
-.degree {
-  position: relative;
-  font-size: 35px;
-  bottom: 75px;
-  left: 67px;
-}
 .time {
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 75px;
+  bottom: 60px;
   font-size: 30px;
 }
 .description {
   position: relative;
   font-size: 30px;
-  bottom: 75px;
+  bottom: 60px;
 }
 .img {
   display: block;
@@ -117,9 +111,11 @@ hr {
   box-shadow: 0 30px 50px rgba(67, 61, 83, 0.08);
 }
 .weather-forecast-icon {
+  display: block;
+  margin: 0 auto;
   position: relative;
   bottom: 50px;
-  left: 8px;
+  width: 60px;
 }
 .weather-forecast-temperature {
   display: flex;

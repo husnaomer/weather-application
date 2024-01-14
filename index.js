@@ -2,7 +2,7 @@ function tempreture(response) {
   console.log(response);
   let temp = document.querySelector("#temp");
 
-  temp.innerHTML = Math.round(response.data.temperature.current);
+  temp.innerHTML = `${Math.round(response.data.temperature.current)} °C `;
 
   let city = document.querySelector("#city");
   city.innerHTML = response.data.city;
@@ -61,38 +61,45 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
 function getForecast(city) {
   let apiKey = "8fdc962ca4f99b40401bo349tfa59399";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(dispalyForecast);
 }
-
 function dispalyForecast(response) {
   console.log(response.data);
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "wed", "Thu", "Fri"];
+
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
          <div class="weather-forecast-day">
-            <div class="weather-forecast-day">${day}</div>
-            <div class="weather-forecast-icon">☀️</div>
+            <div class="weather-forecast-day">${formatDay(day.time)}</div>
+            
+            <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
             <div class="weather-forecast-temperature">
               <span class="weather-forecast-tempreature-max"
-                ><strong>12°</strong></span
+                ><strong>${Math.round(day.temperature.maximum)}°</strong></span
               >
-              <span class="weather-forecast-tempreature-min"> 9°</span>
+              <span class="weather-forecast-tempreature-min"> ${Math.round(
+                day.temperature.minimum
+              )}°</span>
             </div>
           </div>
          `;
+    }
   });
-
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
 let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", handleSearchSubmit);
 searchCity("kabul");
-dispalyForecast();
