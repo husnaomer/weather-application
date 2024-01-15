@@ -46,18 +46,23 @@ h1 {
   position: relative;
   bottom: 60px;
 }
+.degree {
+  position: relative;
+  font-size: 30px;
+  top: 10px;
+}
 
 .time {
   display: flex;
   justify-content: left;
   position: relative;
-  bottom: 60px;
+  bottom: 50px;
   font-size: 30px;
 }
 .description {
   position: relative;
   font-size: 30px;
-  bottom: 60px;
+  bottom: 45px;
 }
 .img {
   display: block;
@@ -65,7 +70,7 @@ h1 {
   border-radius: 90px;
   width: 250px;
   position: relative;
-  bottom: 270px;
+  bottom: 250px;
   padding-top: 0;
   left: 180px;
 }

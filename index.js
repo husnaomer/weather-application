@@ -1,8 +1,9 @@
 function tempreture(response) {
-  console.log(response);
   let temp = document.querySelector("#temp");
 
-  temp.innerHTML = `${Math.round(response.data.temperature.current)} °C `;
+  temp.innerHTML = `${Math.round(
+    response.data.temperature.current
+  )} <span class="degree">°C</span> `;
 
   let city = document.querySelector("#city");
   city.innerHTML = response.data.city;
@@ -25,6 +26,7 @@ function tempreture(response) {
 
   let img = document.querySelector("#img");
   img.innerHTML = `<img src="${response.data.condition.icon_url}" class="img"/>`;
+
   getForecast(response.data.city);
 }
 
@@ -72,8 +74,6 @@ function getForecast(city) {
   axios.get(apiUrl).then(dispalyForecast);
 }
 function dispalyForecast(response) {
-  console.log(response.data);
-
   let forecastHtml = "";
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
